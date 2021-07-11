@@ -225,7 +225,8 @@ a{
     align-items:stretch;
     border: 1px solid lightgray;
     border-radius: 4px;
-    background-color: #f1f1f1;
+    background-color: #f7f7f7;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
 .profileMenuWrapper{
@@ -242,12 +243,19 @@ a{
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
-    margin-bottom: 5px;
 }
 
 .profileMenuProfileLink{
     display: flex;
     margin-bottom: 15px;
+    padding: 5px;
+    width: 100%;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.profileMenuProfileLink:hover{
+    background-color: rgb(231, 231, 231);
 }
 
 .profileMenuText{
@@ -255,10 +263,12 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    cursor: pointer;
 }
 
 .profileMenuName{
     font-weight: 500;
+    margin-bottom: 9px;
 }
 
 .linkToProfile{
@@ -269,10 +279,18 @@ a{
 
 .feedBackWrapper{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 15px;
     margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.feedBackWrapper:hover{
+    background-color: rgb(231, 231, 231);
 }
 
 .feedBackMenuText{
@@ -307,6 +325,7 @@ a{
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .profileMenuSettingsItem{
@@ -315,6 +334,16 @@ a{
     width: 300px;
     align-items: center;
     margin-bottom: 20px;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.profileMenuSettingsItem:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+.profileMenuSettingsItem:last-child{
+    margin-bottom: none;
 }
 
 .profileMenuSettingsText{
@@ -331,4 +360,8 @@ a{
 
 .arrowIcon{
     opacity: 0.6;
+}
+
+.switchComponent{
+    margin-left: 100px;
 }

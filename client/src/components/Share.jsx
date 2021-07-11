@@ -1,13 +1,13 @@
 import './share.css';
 import PhotoIcon from '@material-ui/icons/Photo';
-import LabelIcon from '@material-ui/icons/Label';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import DuoIcon from '@material-ui/icons/Duo';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import {useContext} from 'react';
 import {AuthContext} from '../context/AuthContext';
 import {useRef, useState} from 'react';
 import axios from 'axios';
 import {Cancel} from '@material-ui/icons/index';
+import {Link} from 'react-router-dom';
 
 const Share = () => {
 
@@ -51,8 +51,10 @@ const Share = () => {
         <form className="share">
            <div className="shareWrapper">
                <div className="shareTop">
+                   <Link to={`/profile/${user.username}`}>
                    <img className="profilePicImg" src={user.profilePicture ? `http://localhost:5000/images/${user.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="profile pic"></img>
-                   <input className="shareInput" ref={desc} placeholder={`Какво мислите, ${user.username}?`}></input>
+                   </Link>
+                   <input className="shareInput" ref={desc} placeholder={`What's on your mind, ${user.username}?`}></input>
                </div>
                <hr className="shareHr" />
                {file && (
@@ -63,24 +65,20 @@ const Share = () => {
                )
                }
                <div className="shareBottom">
-                   <div className="shareOption">
+               <div className="shareOption">
+                   <DuoIcon className=" svg livechatsvg"/>
+                   <span className="optiontext">Live Chat</span>
+                </div>
+                <div className="shareOption">
                    <PhotoIcon className="svg photosvg"/>
-                   <label htmlFor="image" className="optiontext">Photo or Video</label>
+                   <label htmlFor="image" className="optiontext">Photo/Video</label>
                    <input id="image" type="file" accept=".png,.jpeg.,.jpg" onChange={(e) => setFile(e.target.files[0])} className="imageInput"></input>
-                   </div>
-                   <div className="shareOption">
-                   <LabelIcon className="svg tagsvg" />
-                   <span className="optiontext">Tag</span>
-                   </div>
-                   <div className="shareOption">
-                   <LocationOnIcon className=" svg locationsvg"/>
-                   <span className="optionText">Location</span>
-                   </div>
-                   <div className="shareOption">
+                </div>
+                <div className="shareOption">
                    <EmojiEmotionsIcon className=" svg emojisvg"/>
                    <span className="optiontext">Feelings</span>
-                   </div>
-                   <button className="shareBtn" onClick={(e) => submitHandler(e)}>Share</button>
+                </div>
+                <button className="shareBtn" onClick={(e) => submitHandler(e)}>Share</button>
                </div>
            </div>
         </form>

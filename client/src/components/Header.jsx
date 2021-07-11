@@ -230,11 +230,30 @@ export default function Header({socket,arrivalMessage}) {
             <div className="profileMenu" style={{display: displayProfileMenu ? 'block' : 'none'}}>
                 <div className="profileMenuWrapper">
                 <div className="profileMenuProfileLink">
-                    <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/907655/04/mod01/fnd/EEA/fmt/png/Swim-Logo-Men's-Swimming-Brief" alt="" className="profileImage" />
+                    <Link to={`/profile/${user.username}`}>
+                    <img src={user.profilePicture ? `http://localhost:5000/images/${user.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="" className="profileImage" />
+                    </Link>
                     <div className="profileMenuText">
-                        <span className="profileMenuName">John Doe</span>
+                        <Link to={`/profile/${user.username}`}>
+                        <span className="profileMenuName">{user.username}</span>
+                        </Link>
+                        <Link to={`/profile/${user.username}`}>
                         <span className="linkToProfile">See your profile</span>
+                        </Link>
                     </div>
+                    <Switch
+                     //checked={this.state.checked}
+                    // onChange={this.handleChange}
+                     onColor="#86d3ff"
+                     onHandleColor="#2693e6"
+                     handleDiameter={30}
+                     uncheckedIcon={false}
+                     checkedIcon={false}
+                     boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+                     height={20}
+                     width={48}
+                     className="switchComponent"
+                    />
                 </div>
                 <hr className="hrClass"></hr>
                 <div className="feedBackWrapper">
