@@ -16,7 +16,7 @@
 }
 
 .profilePage{
-    width: 1430px;
+    width: 1490px;
 }
 
 .coverImgWrapper{
@@ -26,7 +26,7 @@
 }
 
 .coverImg{
-    width: 1460px;
+    width: 100%;
     object-fit: cover;
     height: 350px;
     border-bottom: 2px solid lightgray;

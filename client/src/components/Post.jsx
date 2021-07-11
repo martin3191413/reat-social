@@ -138,7 +138,7 @@ const Post = ({post,socket}) => {
                             <Link to={`/profile/${user.username}`}>
                             <img src={user.profilePicture ? `http://localhost:5000/images/${user.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="pic" className="profilePicComment"></img>
                             </Link>
-                            <input type="text" value={commentText} onChange={(e) => setCommentText(e.target.value)} placeholder="Напишете коментар..." className="commentInput"/>
+                            <input type="text" value={commentText} onChange={(e) => setCommentText(e.target.value)} placeholder="Write a comment..." className="commentInput"/>
                         </form>
                     {comments.map(comment =>(
                         <div className="commentMade">

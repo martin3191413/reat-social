@@ -170,7 +170,7 @@ export default function Header({socket,arrivalMessage}) {
             <div className="searchBarWrapper">
             <div className="searchBar">
                 <Search className="searchIcon"/>
-                <input on value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Търсене във Facebook..." className="searchInput"></input>
+                <input on value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search in Facebook..." className="searchInput"></input>
             </div>
             <ul className="searchUl" style={{display: display ? 'block' : 'none'}}>
                 {results.map((r) => (

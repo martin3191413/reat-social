@@ -6,10 +6,15 @@
 }
 
 .leftMenuWrapper{
-    padding: 10px;
+    margin-top: 10px;
     width: 400px;
     position: sticky;
     top: 50px;
+    margin-left: 40px;
+}
+
+.leftMenuListItemIcon{
+    transform: scale(1.5);
 }
 
 
@@ -39,6 +44,8 @@ background-color: #f1f1f1;
     font-weight: 500;
     padding: 10px;
     border-radius: 12px;
+    width: 80%;
+    margin-bottom: 10px;
 }
 
 .leftMenuListItem:hover{
@@ -65,6 +72,8 @@ background-color: #f1f1f1;
     border-radius: 5px;
     font-weight: 500;
     cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .leftMenuFriendListItem{
@@ -73,6 +82,7 @@ background-color: #f1f1f1;
     cursor: pointer;
     padding: 10px;
     border-radius: 12px;
+    width: 80%;
 }
 
 .leftMenuFriendListItem:hover{
@@ -81,6 +91,7 @@ background-color: #f1f1f1;
 
 .leftMenuHr{
     margin: 20px 0;
+    width: 80%;
 }
 
 .leftMenuFriendList{

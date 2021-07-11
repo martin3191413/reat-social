@@ -132,11 +132,12 @@ a{
     width: 590px;
     max-width: 590px;
     padding-right: 10px;
-    border: 1px solid lightgray;
     border-radius: 8px;
     height: 34px;
     font-size: 16px;
     padding-left: 10px;
+    background-color: rgb(240, 240, 240);
+    border: none;
 }
 
 .commentInput:focus{
@@ -187,10 +188,12 @@ a{
     align-items: flex-start;
     padding-left: 10px;
     padding-right: 5px;
-    border: 1px solid lightgray;
+    border: none;
+    background-color: rgb(240,240,240);
     border-radius: 8px;
     min-width: fit-content;
     max-width: 590px;
+    padding: 10px;
 }
 
 .commentUsername{
