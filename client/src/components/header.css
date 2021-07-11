@@ -1,0 +1,334 @@
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: #4267B2;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.siteLogo{
+    font-weight: 700;
+    font-size: 32px;
+    color:white;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.searchBarWrapper{
+    width: 30%;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchUl{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: fit-content;
+    width: 92%;
+    margin-left: 33px;
+    background-color: white;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.friendLi{
+    font-size: 18px;
+    padding: 5px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.friendLi:hover{
+    background-color: rgb(250, 250, 250);
+}
+
+.searchBar{
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    background-color: white;
+}
+
+
+.searchInput{
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+.searchIcon{
+   font-size: 25px !important;
+   margin-left: 10px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.searchInput:focus{
+    outline: none;
+}
+
+.headerIcons{
+    display: flex;
+}
+
+.img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.links{
+    position: relative;
+    right: 30px;
+}
+
+.link{
+    padding-right: 35px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.headerIcons{
+    position: relative;
+    right: 80px;
+}
+
+.headerIcon{
+    padding-right: 10px;
+    cursor: pointer;
+    color: white;
+    height: 25px;
+    width: 25px;
+    position: relative;
+}
+
+.badge{
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    bottom: 35px;
+    left: 14px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-weight: 500;
+}
+
+.profilePicture{
+    position: relative;
+    right: 80px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.notifications{
+    position: absolute;
+    border: 1px solid #f1f1f1;
+    top: 30px;
+    right: 10px;
+    bottom: -30px;
+    border-top: 4px solid #7398e0;
+    color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 340px;
+    height: fit-content;
+    height: 400px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    cursor: auto;
+
+}
+
+.notification{
+    color: black;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notificationImg{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.personImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.followNotifications{
+
+    position: absolute;
+    border: 1px solid #f1f1f1;
+    top: 30px;
+    right: 10px;
+    bottom: -30px;
+    border-top: 4px solid #7398e0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 340px;
+    height: fit-content;
+    height: 400px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+};
+
+.profileWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileMenu{
+    position: absolute;
+    top: 62px;
+    right: 80px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:stretch;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+.profileMenuWrapper{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profileImage{
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.profileMenuProfileLink{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.profileMenuText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profileMenuName{
+    font-weight: 500;
+}
+
+.linkToProfile{
+    margin-top: 5px;
+    color: hsl(214deg 91% 53%);
+    font-size: 14px;
+}
+
+.feedBackWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.feedBackMenuText{
+    display: flex;
+    flex-direction: column;
+}
+
+.feedBackIcon{
+    padding: 10px;
+    opacity: 0.6;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    background-color: lightgray;
+    margin-right: 10px;
+}
+
+.feedbackLink{
+    margin-top: 5px;
+    color: hsl(214deg 91% 53%);
+    font-size: 14px;
+}
+
+.hrClass{
+    width: 100%;
+    height: 1px;
+    color: lightgray;
+}
+
+.profileMenuSettings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.profileMenuSettingsItem{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profileMenuSettingsText{
+    opacity: 0.9;
+}
+
+.settingsIcon{
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    opacity: 0.6;
+    border-radius: 50%;
+}
+
+.arrowIcon{
+    opacity: 0.6;
+}

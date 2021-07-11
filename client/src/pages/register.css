@@ -1,0 +1,97 @@
+.registerPageWrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.registerPageLeft{
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+    justify-content: flex-start;
+}
+
+.logo{
+    color: #1775ee;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.description{
+    font-size: 24px;
+}
+
+.registerPageRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 12px;
+    height: 400px;
+    width: 500px;
+    background-color: white;
+}
+
+.registerInputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.registerInput{
+    height: 50px;
+    width: 470px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.registerInput:focus{
+    outline: none;
+}
+
+.registerBtn{
+    height: 50px;
+    width: 500px;
+    border-radius: 10px;
+    color: white;
+    background-color: #1775ee;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.registerBtn:focus{
+    outline: none;
+}
+
+.forgotPassword{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #1775ee;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.logIn{
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    color: white;
+    background-color: #25ac46;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}

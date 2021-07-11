@@ -1,0 +1,40 @@
+.messageWrapper{
+    padding: 20px;
+}
+
+.messageImg{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.messageTop{
+    display: flex;
+}
+
+.messageBox{
+    padding: 15px;
+    background-color: #4267B2;
+    color: white;
+    font-weight: 500;
+    border-radius: 20px;
+    max-width: 360px;
+}
+
+.messageBottom{
+    padding: 10px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.own{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.messageBox.own{
+    background-color: rgb(250,250,250);
+    color:black;
+}

@@ -1,0 +1,42 @@
+.onlineFriendList{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-items: center;
+    align-items: flex-start;
+}
+
+.onlineFriendsHeader{
+    font-weight: 500;
+    font-size: 20px;
+
+}
+
+.friend{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    cursor: pointer;
+}
+
+.friendImg{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.activeDot{
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: limegreen;
+    border-radius: 50%;
+    border: 2px solid white;
+    top: 32px;
+    right: 67px;
+}
+
+.noOnline{
+    margin-top: 10px;
+}

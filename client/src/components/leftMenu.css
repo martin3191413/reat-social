@@ -1,0 +1,94 @@
+.leftMenu{
+    height: calc(100vh - 50px);
+    overflow-y: scroll;
+    position: sticky;
+    top: 50px;
+}
+
+.leftMenuWrapper{
+    padding: 10px;
+    width: 400px;
+    position: sticky;
+    top: 50px;
+}
+
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+background-color: #f1f1f1;
+}
+
+::-webkit-slider-thumb{
+    background-color: rgb(179, 179, 179);
+}
+
+.leftMenuList{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.leftMenuListItem{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.leftMenuListItem:hover{
+    background-color: rgb(250, 250, 250);
+}
+
+.leftMenuListItemText{
+    margin-top: 2px;
+    margin-left: 15px;
+}
+
+.leftMenuFriendLIstItemPic{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.leftMenuButton{
+    width: 100px;
+    background-color: whitesmoke;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.leftMenuFriendListItem{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.leftMenuFriendListItem:hover{
+    background-color: rgb(250, 250, 250);
+}
+
+.leftMenuHr{
+    margin: 20px 0;
+}
+
+.leftMenuFriendList{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leftMenuFriendListItemName{
+    margin-left: 10px;
+}

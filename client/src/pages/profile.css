@@ -1,0 +1,96 @@
+.profileWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profilePage{
+    width: 1430px;
+}
+
+.coverImgWrapper{
+    height: 420px;
+    position: relative;
+    width: 100%;
+}
+
+.coverImg{
+    width: 1460px;
+    object-fit: cover;
+    height: 350px;
+    border-bottom: 2px solid lightgray;
+}
+
+.profileImgWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profileImg{
+    position: absolute;
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    border: 3px solid white;
+    left: 470px;
+    right: 0;
+    margin: auto;
+    top: 290px;
+    object-fit: cover;
+}
+
+.userInformation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 30px;
+    position: relative;
+    left: 30px;
+}
+
+.username{
+    font-size: 38px;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.profileDescription{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.userInfo{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.editProfilePic{
+    position: relative;
+}
+
+.editIcon{
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    padding: 5px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 8px;
+    cursor: pointer;
+}

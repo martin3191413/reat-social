@@ -1,0 +1,221 @@
+
+.postWrapper{
+    padding: 30px;
+    margin-left: 30px;
+    width: 640px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+margin-bottom: 35px;
+
+}
+
+
+.postTop{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.postTopLeft{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.postTopRight{
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    left: 70px;
+}
+
+.profilePic{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profileName{
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.postAdded{
+    font-size: 12px;
+    color:rgb(116, 116, 116);
+}
+
+.postDescription{
+    padding-bottom: 20px;
+}
+
+.postPic{
+    width: 640px;
+    height: 450px;
+    object-fit: cover;
+}
+
+.postBottomLeft{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.reactions{
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+.postReact{
+    height: 25px;
+    width: 25px;
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+
+.postBottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.postBottomRight{
+    padding-top: 25px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.comments{
+    cursor: pointer;
+    position: relative;
+    bottom: 15px;
+}
+
+.commentSection{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.comment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+    right: 5px;
+    height: 50px;
+}
+
+.profilePicComment{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.commentInput{
+    width: 590px;
+    max-width: 590px;
+    padding-right: 10px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    height: 34px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.commentInput:focus{
+    outline: none;
+}
+
+.reactsHr{
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.postReactions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postReaction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.postReaction:hover{
+    background-color: rgb(250, 250, 250);
+}
+
+.shareReactionIcon{
+    margin-right: 5px;
+}
+
+.commentMade{
+    display: flex;
+    position: relative;
+    right: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.commentDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-right: 5px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    min-width: fit-content;
+    max-width: 590px;
+}
+
+.commentUsername{
+    font-weight: 600;
+}
+
+.shareReactionIcon{
+    color: rgb(214, 214, 214);
+}
+
+.optionsIcon{
+    position: sticky;
+}
+
+.optionsDiv{
+    position: relative;
+}
+
+
+.option{
+    display: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 18px;
+    padding: 5px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 8px;
+}

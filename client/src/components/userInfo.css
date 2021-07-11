@@ -1,0 +1,125 @@
+.userInfo{
+    height: fit-content;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+.userInfoWrapper{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.userHeader{
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.userInfoText{
+    padding-bottom: 20px;
+}
+
+.friendListHeader{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.friendList{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    height: 330px;
+    width: 400px;
+    position: relative;
+    right: 20px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.friendPhoto{
+    height: 100px;
+    width: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.friend{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 10px;
+}
+
+.friendName{
+    margin-top: 5px;
+}
+
+
+.followBtn{
+    width: 170px;
+    height: 35px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: none;
+    background-color: #4267B2;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.followIcon{
+    padding-left: 5px;
+}
+
+.noFriendsHeader{
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.rightbarFollowings{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 350px;
+}
+.rightbarFollowing{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+
+.rightbarFollowingImg{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.rightbarFollowingName{
+    margin-top: 5px;
+}
+  

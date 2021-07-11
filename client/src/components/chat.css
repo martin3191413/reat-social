@@ -1,0 +1,75 @@
+.chatBoxWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  position: relative;
+  height: 90vh;
+}
+
+.chatBoxTop{
+    overflow-y: scroll;
+    padding-right: 10px;
+}
+
+.chatBoxBottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+}
+
+.textArea{
+    padding: 5px;
+    padding-left: 10px;
+    width: 75%;
+    height: 50px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+.textArea:focus{
+    outline: none;
+}
+
+.none{
+    background-color: lightskyblue;
+    cursor: not-allowed;
+}
+
+.active{
+    background-color: rgb(70, 183, 253);
+    cursor: pointer;
+}
+
+.sendBtn{
+    width: 100px;
+    height: 30px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+
+.noActiveChatWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  position: relative;
+  height: 90vh;
+}
+
+.noActiveChatText{
+    font-size: 30px;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    opacity: 0.6;
+    width: fit-content;
+}

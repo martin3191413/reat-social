@@ -1,0 +1,91 @@
+.messenger{
+    display: flex;
+    height: 100%;
+}
+
+.conversations{
+    flex: 3.5;
+}
+
+.chat{
+    flex: 5.5;
+   border-left: 1px solid lightgray;
+   border-right: 1px solid lightgray;
+   height: 93.5vh;
+}
+
+.onlineFriends{
+    flex: 3.5;
+}
+
+.converstationsWrapper{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.conversationImg{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.chatWrapper{
+    padding: 20px;
+}
+
+.friendsWrapper{
+    padding: 10px;
+}
+
+.conversation{
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.searchFriend{
+    border: none;
+    border-bottom: 1px solid lightgray;
+    width: 70%;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.searchFriend:focus{
+    outline: none;
+}
+
+.conversationName{
+    font-weight: 600;
+}
+
+.searchOptions{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.searchOptions{
+    position: absolute;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    background-color: white;
+    width: 20.85%;
+}
+
+.searchOption{
+    padding: 5px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.searchOption:hover{
+  background-color: rgb(250, 250, 250);
+}
