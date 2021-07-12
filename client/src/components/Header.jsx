@@ -121,8 +121,7 @@ export default function Header({socket,arrivalMessage}) {
 
                 const senderData = await axios.get(`http://localhost:5000/api/users/${data.senderId}`);
                 
-                setFollowNotificationsData((prev) => [...prev, {...senderData.data}]);
-                setHaveSeenFollowNotifications(false);
+                setNotificationsData((prev) => [...prev, {...senderData.data}]);
             };
  
             fetchFollowNotificationsData();
@@ -141,6 +140,19 @@ export default function Header({socket,arrivalMessage}) {
              setDisplayNotifications(!displayNotifications);
         }
     };
+
+    // const displayNotifications = () => {
+
+    //     const data = [];
+
+    //     notificationsData.map((n) => (
+    //         <div className="notification">
+    //     <img  src={n.profilePicture ? `http://localhost:5000/images/${n.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="" className="personImg" />
+    //         <span>{n.username} has liked your photo.</span>
+    //         <img src={`http://localhost:5000/images/${n.img}`} alt="" className="notificationImg" />
+    //     </div>
+    //     ));
+    // };
 
     const logoutHandler = () => {
 
@@ -241,8 +253,6 @@ export default function Header({socket,arrivalMessage}) {
                         </Link>
                     </div>
                     <Switch
-                     //checked={this.state.checked}
-                    // onChange={this.handleChange}
                      onColor="#86d3ff"
                      onHandleColor="#2693e6"
                      handleDiameter={30}

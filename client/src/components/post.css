@@ -4,7 +4,7 @@
     margin-left: 30px;
     width: 640px;
     border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 margin-bottom: 35px;
 background-color: #fff;
 }
@@ -136,7 +136,7 @@ a{
     height: 34px;
     font-size: 16px;
     padding-left: 10px;
-    background-color: rgb(240, 240, 240);
+    background-color: #f0f2f5;
     border: none;
 }
 
@@ -189,7 +189,7 @@ a{
     padding-left: 10px;
     padding-right: 5px;
     border: none;
-    background-color: rgb(240,240,240);
+    background-color: #f0f2f5;
     border-radius: 8px;
     min-width: fit-content;
     max-width: 590px;

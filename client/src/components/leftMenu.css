@@ -102,7 +102,7 @@
 .keyboardIcon{
     padding: 10px;
    border-radius: 50%;
-   background-color: rgb(241, 241, 241);
+   background-color: rgb(252, 249, 249);
 }
 
 .shortcutsHeader{
@@ -140,6 +140,7 @@
     height: 42px;
     width: 42px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .facebookRightsSpan{

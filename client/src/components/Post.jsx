@@ -6,7 +6,8 @@ import axios from 'axios';
 import {AuthContext} from '../context/AuthContext';
 import {Link} from 'react-router-dom';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
+import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
+import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
 import RedoIcon from '@material-ui/icons/Redo';
 
 const Post = ({post,socket}) => {
@@ -121,11 +122,11 @@ const Post = ({post,socket}) => {
                 <hr className="reactsHr"></hr>
                 <div className="postReactions">
                         <div className="postReaction" onClick={likeHandler}>
-                        <ThumbUpIcon className="shareReactionIcon" style={{color: isLiked ? 'hsla(214,89%,52%,1)' : 'rgb(214, 214, 214)' }} />
+                            {isLiked ? <ThumbUpIcon className="shareReactionIcon" style={{color:  'hsla(214,89%,52%,1)'}} /> : <ThumbUpOutlinedIcon className="shareReactionIcon" style={{color: 'rgb(197,197,197)'}} /> }
                             <span className="shareReactionText" style={{color: isLiked ? 'hsla(214,89%,52%,1)' : 'black'}} >Like</span>
                         </div>
                         <div className="postReaction"onClick={() => setShowComments(true)} >
-                        <ChatBubbleIcon className="shareReactionIcon"/>
+                        <ChatBubbleOutlineOutlinedIcon className="shareReactionIcon"/>
                             <span className="shareReactionText">Comment</span>
                         </div>
                         <div className="postReaction">
