@@ -1,7 +1,12 @@
 import './header.css';
 import {Search, Person, Message} from '@material-ui/icons';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import {Link} from 'react-router-dom';
+import {Link,NavLink} from 'react-router-dom';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import MovieCreationOutlinedIcon from '@material-ui/icons/MovieCreationOutlined';
+import DriveEtaOutlinedIcon from '@material-ui/icons/DriveEtaOutlined';
+import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
+import GamesOutlinedIcon from '@material-ui/icons/GamesOutlined';
 import {useContext, useEffect, useState} from 'react';
 import {AuthContext} from '../context/AuthContext';
 import axios from 'axios';
@@ -162,8 +167,8 @@ export default function Header({socket,arrivalMessage}) {
 
     return (
         <div className="header">
+            <div className="headerLeft">
             <Link to="/">
-            
             <div className="siteLogo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="logo" className="facebookLogo" />
             </div>
@@ -171,7 +176,7 @@ export default function Header({socket,arrivalMessage}) {
             <div className="searchBarWrapper">
             <div className="searchBar">
                 <Search className="searchIcon"/>
-                <input on value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search in Facebook..." className="searchInput"></input>
+                <input on value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search in Facebook" className="searchInput"></input>
             </div>
             <ul className="searchUl" style={{display: display ? 'block' : 'none'}}>
                 {results.map((r) => (
@@ -181,49 +186,29 @@ export default function Header({socket,arrivalMessage}) {
                 ))}
             </ul>
             </div>
-
-            <div className="links">
-                <Link to="/">
-                <span className="link">Homepage</span>
-                </Link>
-                <Link to={`/profile/${user.username}`}>
-                <span className="link">Timeline</span>
-                </Link>
-                
             </div>
-            <div className="headerIcons">
-                <div className="headerIcon">
-                    <Person onClick={displayFollowNotificationsFunction} />
-                    <span className="badge" style={{display: haveSeenFollowNotifications === false && followNotificationsData.length > 0 ? 'block' : 'none'}}>{followNotificationsData.length}</span>
-                    <div className="followNotifications" style={{display: displayFollowNotifications ? 'block' : 'none'}}>
-                    {followNotificationsData.map((n) => (
-                            <div className="notification">
-                        <img  src={n.profilePicture ? `http://localhost:5000/images/${n.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="" className="personImg" />
-                            <span>{n.username} has started following you.</span>
-                        </div>
-                        ))}
+            <div className="headerMiddle">
+                <div className="headerIcons">
+                    <NavLink exact to='/' activeClassName="activeHomeLink">
+                    <div className="headerIcon">
+                        <HomeOutlinedIcon  className="headerIconSvg"/>
                     </div>
-                </div>
-                <Link to="/messenger">
-                <div className="headerIcon">
-                    <Message />
-                    <span className="badge" style={{display: Object.keys(arrivalMessage).length > 0  && arrivalMessage.senderId !== user._id ? 'block' : 'none'}}>1</span>
-                </div>
-                </Link>
-                <div className="headerIcon">
-                    <NotificationsIcon onClick={displayNotificationsFunction} />
-                    <span className="badge" style={{display: haveSeenNotifications === false && notificationsData.length > 0 ? 'block' : 'none'}}>{notificationsData.length}</span>
-                    <div className="notifications" style={{display: displayNotifications ? 'block': 'none'}}>
-                        {notificationsData.map((n) => (
-                            <div className="notification">
-                        <img  src={n.profilePicture ? `http://localhost:5000/images/${n.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="" className="personImg" />
-                            <span>{n.username} has liked your photo.</span>
-                            <img src={`http://localhost:5000/images/${n.img}`} alt="" className="notificationImg" />
-                        </div>
-                        ))}
+                    </NavLink>
+                    <div className="headerIcon">
+                        <MovieCreationOutlinedIcon className="headerIconSvg" />
+                    </div>
+                    <div className="headerIcon">
+                        <DriveEtaOutlinedIcon className ="headerIconSvg" />
+                    </div>
+                    <div className="headerIcon">
+                        <PeopleAltOutlinedIcon className ="headerIconSvg" />
+                    </div>
+                    <div className="headerIcon">
+                        <GamesOutlinedIcon className ="headerIconSvg" />
                     </div>
                 </div>
             </div>
+            <div className="headerRight">
             <div className="profileWrapper">
             <div className="profilePicture">
                 <img className="img" onClick={() => setDisplayProfileMenu(!displayProfileMenu)}  src={user.profilePicture ? `http://localhost:5000/images/${user.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="profile-pic"></img>
@@ -288,6 +273,7 @@ export default function Header({socket,arrivalMessage}) {
                     </div>
                 </div>
                 </div>
+            </div>
             </div>
             </div>
         </div>

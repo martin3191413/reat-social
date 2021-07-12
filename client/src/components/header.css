@@ -1,13 +1,21 @@
 .header{
     width: 100%;
     height: 60px;
-    background-color: #4267B2;
+    background-color: #f0f2f5;
     position: sticky;
     top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 999;
+    border-bottom: 1px solid lightgray;
+}
+
+.headerLeft{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
 }
 
 .siteLogo{
@@ -27,10 +35,11 @@
 }
 
 .searchBarWrapper{
-    width: 30%;
+    width: 100%;
     height: 35px;
     display: flex;
     flex-direction: column;
+    margin-right: 50px;
 }
 
 .searchUl{
@@ -58,11 +67,12 @@
 }
 
 .searchBar{
-    border: 1px solid lightgray;
     border-radius: 30px;
     height: 35px;
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
 }
 
@@ -71,15 +81,17 @@
     width: 100%;
     border-radius: 30px;
     border: none;
-    padding-left: 10px;
-    font-size: 17px;
+    padding-left: 7px;
+    font-size: 16px;
+    margin-top: 2px;
 }
 
 .searchIcon{
-   font-size: 25px !important;
    margin-left: 10px;
   margin-top: 3px;
   cursor: pointer;
+  color: rgb(207, 207, 207);
+  margin-bottom: 2px;
 }
 
 .searchInput:focus{
@@ -368,4 +380,41 @@ a{
 
 .switchComponent{
     margin-left: 100px;
+}
+
+
+.headerIconSvg{
+    color: black;
+    transform: scale(1.5);
+}
+
+.headerMiddle{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 51%;
+}
+
+.headerIcons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerIcon{
+    padding: 18px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    border-radius: 12px;
+    margin-right: 35px;
+}
+
+.headerIcon:hover{
+    background-color: rgb(233, 233, 233);
+}
+
+.activeHomeLink{
+    border-bottom: 2px solid hsla(214,89%,52%,1);
 }
