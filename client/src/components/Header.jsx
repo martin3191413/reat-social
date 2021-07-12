@@ -1,10 +1,14 @@
 import './header.css';
-import {Search, Person, Message} from '@material-ui/icons';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import {Search} from '@material-ui/icons';
+import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
+import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import {Link,NavLink} from 'react-router-dom';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import HomeIcon from '@material-ui/icons/Home';
 import MovieCreationOutlinedIcon from '@material-ui/icons/MovieCreationOutlined';
+import AppsOutlinedIcon from '@material-ui/icons/AppsOutlined';
 import DriveEtaOutlinedIcon from '@material-ui/icons/DriveEtaOutlined';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
 import GamesOutlinedIcon from '@material-ui/icons/GamesOutlined';
 import {useContext, useEffect, useState} from 'react';
@@ -17,7 +21,7 @@ import HelpIcon from '@material-ui/icons/Help';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import Switch from 'react-switch';
-import { useHistory } from 'react-router';
+import { useHistory} from 'react-router';
 import { authTokenAuthorization } from '../apiCalls';
 
 export default function Header({socket,arrivalMessage}) {
@@ -32,10 +36,7 @@ export default function Header({socket,arrivalMessage}) {
     const [results, setResults] = useState([]);
     const [notificationsData, setNotificationsData] = useState([]);
     const [displayNotifications, setDisplayNotifications] = useState(false);
-    const [followNotificationsData, setFollowNotificationsData] = useState([]);
-    const [displayFollowNotifications, setDisplayFollowNotifications] = useState(false);
     const [haveSeenNotifications, setHaveSeenNotifications] = useState(false);
-    const [haveSeenFollowNotifications, setHaveSeenFollowNotifications] = useState(false);
     const [displayProfileMenu,setDisplayProfileMenu] = useState(false);
 
     useEffect(() => {
@@ -141,19 +142,6 @@ export default function Header({socket,arrivalMessage}) {
         }
     };
 
-    const displayFollowNotificationsFunction = () => {
-
-        if (followNotificationsData.length > 0){
-
-            if (displayFollowNotifications === false){
-                setHaveSeenFollowNotifications(true);
-            }
-               
-            setDisplayFollowNotifications(!displayFollowNotifications);
-         
-        }
-    };
-
     const logoutHandler = () => {
 
         const token = localStorage.getItem('userSession');
@@ -191,7 +179,7 @@ export default function Header({socket,arrivalMessage}) {
                 <div className="headerIcons">
                     <NavLink exact to='/' activeClassName="activeHomeLink">
                     <div className="headerIcon">
-                        <HomeOutlinedIcon  className="headerIconSvg"/>
+                        {window.location.pathname === '/' ? <HomeIcon className="headerIconSvg blue"/> : <HomeOutlinedIcon className="headerIconSvg" />}
                     </div>
                     </NavLink>
                     <div className="headerIcon">
@@ -212,6 +200,31 @@ export default function Header({socket,arrivalMessage}) {
             <div className="profileWrapper">
             <div className="profilePicture">
                 <img className="img" onClick={() => setDisplayProfileMenu(!displayProfileMenu)}  src={user.profilePicture ? `http://localhost:5000/images/${user.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="profile-pic"></img>
+                <span className="profileMenuProfileText">{user.username}</span>
+                <div className="profileLinks">
+                    <div className="profileLinkWrapper">
+                    <AppsOutlinedIcon className="profileLink" />
+                    </div>
+                    <div className="profileLinkWrapper">
+                    <MessageOutlinedIcon className="profileLink"  />
+                    </div>
+                    <div className="profileLinkWrapper">
+                    <NotificationsNoneOutlinedIcon onClick={displayNotificationsFunction} className="profileLink" />
+                    <span className="badge" style={{display: haveSeenNotifications === false && notificationsData.length > 0 ? 'block' : 'none'}}>{notificationsData.length}</span>
+                    <div className="notifications" style={{display: displayNotifications ? 'block': 'none'}}>
+                        {notificationsData.map((n) => (
+                            <div className="notification">
+                        <img  src={n.profilePicture ? `http://localhost:5000/images/${n.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="" className="personImg" />
+                            <span>{n.username} has liked your photo.</span>
+                            <img src={`http://localhost:5000/images/${n.img}`} alt="" className="notificationImg" />
+                        </div>
+                        ))}
+                    </div>
+                    </div>
+                    <div className="profileLinkWrapper">
+                    <KeyboardArrowDownIcon className="profileLink" />
+                    </div>
+            </div>
             </div>
             <div className="profileMenu" style={{display: displayProfileMenu ? 'block' : 'none'}}>
                 <div className="profileMenuWrapper">

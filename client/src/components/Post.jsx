@@ -121,8 +121,8 @@ const Post = ({post,socket}) => {
                 <hr className="reactsHr"></hr>
                 <div className="postReactions">
                         <div className="postReaction" onClick={likeHandler}>
-                        <ThumbUpIcon className="shareReactionIcon" style={{color: isLiked ? '#4267B2' : 'rgb(214, 214, 214)' }} />
-                            <span className="shareReactionText" >Like</span>
+                        <ThumbUpIcon className="shareReactionIcon" style={{color: isLiked ? 'hsla(214,89%,52%,1)' : 'rgb(214, 214, 214)' }} />
+                            <span className="shareReactionText" style={{color: isLiked ? 'hsla(214,89%,52%,1)' : 'black'}} >Like</span>
                         </div>
                         <div className="postReaction"onClick={() => setShowComments(true)} >
                         <ChatBubbleIcon className="shareReactionIcon"/>
