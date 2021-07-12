@@ -18,9 +18,17 @@
     cursor: pointer;
 }
 
+.facebookLogo{
+    margin-top: 5px;
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    padding: 10px;
+}
+
 .searchBarWrapper{
     width: 30%;
-    height: 30px;
+    height: 35px;
     display: flex;
     flex-direction: column;
 }
@@ -52,7 +60,7 @@
 .searchBar{
     border: 1px solid lightgray;
     border-radius: 30px;
-    height: 30px;
+    height: 35px;
     width: 100%;
     display: flex;
     background-color: white;
@@ -108,7 +116,7 @@
 }
 
 .headerIcon{
-    padding-right: 10px;
+    padding: 8px;
     cursor: pointer;
     color: white;
     height: 25px;
@@ -143,14 +151,11 @@ a{
 
 .notifications{
     position: absolute;
-    border: 1px solid #f1f1f1;
-    top: 30px;
+    top: 52px;
     right: 10px;
     bottom: -30px;
-    border-top: 4px solid #7398e0;
     color: black;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 4px;
     width: 340px;
     height: fit-content;
     height: 400px;
@@ -159,8 +164,9 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: #f7f7f7;
     cursor: auto;
+    border: 1px solid lightgray;
 
 }
 
@@ -191,12 +197,10 @@ a{
 
     position: absolute;
     border: 1px solid #f1f1f1;
-    top: 30px;
+    top: 52px;
     right: 10px;
     bottom: -30px;
-    border-top: 4px solid #7398e0;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 4px;
     width: 340px;
     height: fit-content;
     height: 400px;
@@ -204,7 +208,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: whitesmoke;
+    background-color: #f7f7f7;
 };
 
 .profileWrapper{

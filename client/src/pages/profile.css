@@ -16,17 +16,19 @@
 }
 
 .profilePage{
-    width: 1490px;
+    width: 1400px;
 }
 
 .coverImgWrapper{
     height: 420px;
     position: relative;
-    width: 100%;
+    width: 1000px;
+    margin-left: 40px;
+    object-fit: cover;
 }
 
 .coverImg{
-    width: 100%;
+    width: 1391px;
     object-fit: cover;
     height: 350px;
     border-bottom: 2px solid lightgray;
