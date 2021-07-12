@@ -1,13 +1,5 @@
 import './leftMenu.css';
-
-import {RssFeed} from '@material-ui/icons';
-import ChatIcon from '@material-ui/icons/Chat';
-import DuoIcon from '@material-ui/icons/Duo';
-import GroupIcon from '@material-ui/icons/Group';
-import BookmarkIcon from '@material-ui/icons/Bookmark';
-import HelpIcon from '@material-ui/icons/Help';
-import WorkIcon from '@material-ui/icons/Work';
-import EventIcon from '@material-ui/icons/Event';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import { AuthContext } from '../context/AuthContext';
 import { useContext, useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
@@ -43,39 +35,30 @@ const LeftMenu = () => {
             <div className="leftMenuWrapper">
                 <ul className="leftMenuList">
                     <li className="leftMenuListItem">
-                        <RssFeed className="leftMenuListItemIcon" />
-                        <span className="leftMenuListItemText">Feed</span>
+                        <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yR/r/tInzwsw2pVX.png" alt="" className="leftMenuListItemIconImg" />
+                        <span className="leftMenuListItemText">COVID-19: Information Center</span>
                     </li>
                     <li className="leftMenuListItem">
-                        <ChatIcon  className="leftMenuListItemIcon"/>
-                        <span className="leftMenuListItemText">Chats</span>
+                        <img src="https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/9BDqQflVfXI.png" alt="" className="leftMenuListItemIconImg" />
+                        <span className="leftMenuListItemText">Marketplace</span>
                     </li>
                     <li className="leftMenuListItem">
-                        <DuoIcon className="leftMenuListItemIcon" />
-                        <span className="leftMenuListItemText">Videos</span>
-                    </li>
-                    <li className="leftMenuListItem">
-                        <GroupIcon className="leftMenuListItemIcon" />
+                        <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/mk4dH3FK0jT.png" alt="" className="leftMenuListItemIconImg" />
                         <span className="leftMenuListItemText">Groups</span>
                     </li>
                     <li className="leftMenuListItem">
-                        <BookmarkIcon className="leftMenuListItemIcon" />
-                        <span className="leftMenuListItemText">Bookmarks</span>
+                      <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/-XF4FQcre_i.png" className="leftMenuListItemIconImg" alt="" />
+                        <span className="leftMenuListItemText">Friends</span>
                     </li>
                     <li className="leftMenuListItem">
-                        <HelpIcon  className="leftMenuListItemIcon"/>
-                        <span className="leftMenuListItemText">Questions</span>
+                        <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yG/r/A1HlI2LVo58.png" alt="" className="leftMenuListItemIconImg" />
+                        <span className="leftMenuListItemText">Watch</span>
                     </li>
                     <li className="leftMenuListItem">
-                        <WorkIcon className="leftMenuListItemIcon" />
-                        <span className="leftMenuListItemText">Jobs</span>
-                    </li>
-                    <li className="leftMenuListItem">
-                        <EventIcon className="leftMenuListItemIcon" />
-                        <span className="leftMenuListItemText">Events</span>
+                        <KeyboardArrowDownIcon className="keyboardIcon" />
+                    <span className="leftMenuListItemText">See More</span>
                     </li>
                 </ul>
-                <button className="leftMenuButton">Show More</button>
                 <hr className="leftMenuHr"></hr>
                 <ul className="leftMenuFriendList">
                     {friendsData.map(f => (

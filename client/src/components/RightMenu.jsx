@@ -41,11 +41,17 @@ const RightMenu = ({onlineFriendsData, currentUser}) => {
         return (
             <div className="rightMenu">
             <div className="rightMenuWrapper">
-                <div className="birthdayWrapper">
-                    <img className="giftImg" src="/gift.png" alt="gift"></img>
-                   <span className="birthdayText"><b>Pola Foster</b> and <b>3 other friends</b> have a birthday today.</span>
+                <div className="rightBarBirthdayWrapper">
+                    <div className="rightBarBirthdayTop">
+                        <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yA/r/hq-o6A7TPpe.png" alt="presentPic" className="presentImg" />
+                        <span className="birthdayText">Birthdays</span>
+                    </div>
+                    <div className="rightBarBirthdayBottom">
+                        <span className="birthdayBottomText"><b>John Doe</b> and <b>4 others</b> have birthdays today!</span>
+                    </div>
                 </div>
                 <img className="rightBarAd" src="/ad.png" alt="ad"></img>
+                <hr />
                 <div className="rightBarMenuFriends">
                     <h4 className="headerFriends">Online Friends</h4>
                     <ul className="rightbarFriendList">

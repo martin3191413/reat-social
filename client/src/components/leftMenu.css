@@ -40,12 +40,17 @@ background-color: #f1f1f1;
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     padding: 10px;
     border-radius: 12px;
     width: 80%;
     margin-bottom: 10px;
+}
+
+.leftMenuListItemIconImg{
+    width: 42px;
+    height: 42px;
 }
 
 .leftMenuListItem:hover{
@@ -102,4 +107,10 @@ background-color: #f1f1f1;
 
 .leftMenuFriendListItemName{
     margin-left: 10px;
+}
+
+.keyboardIcon{
+    padding: 10px;
+   border-radius: 50%;
+   background-color: rgb(241, 241, 241);
 }
