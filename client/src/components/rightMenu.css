@@ -39,10 +39,14 @@
     margin-top: 40px;
 }
 
+.hrRightBar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .headerFriends{
-    margin-top: 30px;
     margin-left: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .rightbarFriendList{

@@ -51,7 +51,7 @@ const RightMenu = ({onlineFriendsData, currentUser}) => {
                     </div>
                 </div>
                 <img className="rightBarAd" src="/ad.png" alt="ad"></img>
-                <hr />
+                <hr className="hrRightBar" />
                 <div className="rightBarMenuFriends">
                     <h4 className="headerFriends">Online Friends</h4>
                     <ul className="rightbarFriendList">
