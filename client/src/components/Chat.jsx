@@ -111,7 +111,7 @@ const Chat = ({activeChat, currentUser, socket,arrivalMessage}) => {
             </div>
             </div>
             <div className="chatBoxBottom">
-            <textarea onChange={(e) => setMessageInput(e.target.value)} placeholder="write something..." className="textArea"></textarea>
+            <textarea onChange={(e) => setMessageInput(e.target.value)} value={messageInput} placeholder="write something..." className="textArea"></textarea>
             <button className={!messageInput ? 'sendBtn none' : 'sendBtn active'} onClick={onClickHandler}>Send</button>
         </div>
         </div>

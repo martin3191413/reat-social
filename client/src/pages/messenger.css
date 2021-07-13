@@ -4,14 +4,18 @@
 }
 
 .conversations{
-    flex: 3.5;
+    flex: 2.5;
 }
 
 .chat{
-    flex: 5.5;
+    flex: 4.5;
    border-left: 1px solid lightgray;
    border-right: 1px solid lightgray;
    height: 93.5vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
 }
 
 .onlineFriends{

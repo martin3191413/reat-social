@@ -3,7 +3,7 @@ import React, { useContext, useEffect,useState } from 'react';
 import './onlineFriends.css';
 import {AuthContext} from '../context/AuthContext';
 
-const OnlineFriends = ({onlineFriendsData, currentUser,userChats,setUserChats}) => {
+const OnlineFriends = ({onlineFriendsData, currentUser,userChats,setUserChats,setActiveChat}) => {
 
     const {user} = useContext(AuthContext);
 
@@ -37,15 +37,25 @@ const OnlineFriends = ({onlineFriendsData, currentUser,userChats,setUserChats}) 
             };
 
             const res = await axios.post(`http://localhost:5000/api/conversations/newConversation`, payload);
-            setUserChats([...userChats, res.data]);
+            setUserChats((prev) => [...prev, res.data]);
+            setActiveChat(res.data);
         };
 
         if (activeElement){
-            newConversationHandler();
-            setActiveElement('');
+            let isIncluded = false;
+            userChats.map((chat) => {
+                if (chat.members.includes(activeElement._id)){
+                    setActiveChat(chat);
+                    isIncluded = true;
+                }
+            });
+            if (isIncluded === false){
+                newConversationHandler();
+                 setActiveElement('');
+            }
         }
 
-    }, [activeElement,user, userChats, setUserChats]);
+    }, [activeElement,user, userChats, setUserChats,setActiveChat]);
 
 
     const noOnlineFriends = <span className="noOnline">No friends currently online &#128533;</span>;

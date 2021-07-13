@@ -25,6 +25,7 @@
     flex-direction: column;
     border-radius: 12px;
     height: 70px;
+    padding: 10px;
 }
 
 .rightBarBirthdayTop{

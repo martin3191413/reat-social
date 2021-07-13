@@ -105,8 +105,19 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
         };
 
         if (activeElement){
-             newConversationHandler();
-             setActiveElement('');
+            let isIncluded = false;
+            userChats.map((chat) => {
+                if (chat.members.includes(activeElement._id)){
+                    setActiveChat(chat);
+                    setDisplay(false);
+                    setSearch('');
+                    isIncluded = true;
+                }
+            });
+            if (isIncluded === false){
+                newConversationHandler();
+                 setActiveElement('');
+            }
         }
 
     }, [activeElement,user, userChats]);
@@ -135,7 +146,7 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
                    <Chat activeChat={activeChat} currentUser={user} socket={socket} arrivalMessage={arrivalMessage}/>
             </div>
             <div className="onlineFriends">
-                <OnlineFriends onlineFriendsData={onlineFriendsData} userChats={userChats} setUserChats={setUserChats}  currentUser={user} />
+                <OnlineFriends onlineFriendsData={onlineFriendsData} userChats={userChats} setActiveChat={setActiveChat} setUserChats={setUserChats}  currentUser={user} />
             </div>
         </div>
         </>

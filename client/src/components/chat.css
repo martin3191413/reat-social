@@ -4,6 +4,7 @@
     justify-content: space-between;
   position: relative;
   height: 90vh;
+  width: 100%;
 }
 
 .chatBoxChatInfo{
@@ -44,7 +45,7 @@
 .chatBoxTop{
     overflow-y: scroll;
     height: 100%;
-    overflow: hidden;
+    max-height: 719.09px;
     padding-right: 10px;
 }
 
@@ -98,19 +99,11 @@
 }
 
 
-.noActiveChatWrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  position: relative;
-  height: 90vh;
-}
-
 .noActiveChatText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
-    position: absolute;
-    top: 35%;
-    left: 35%;
     opacity: 0.6;
-    width: fit-content;
+    margin-bottom: 50px;
 }
