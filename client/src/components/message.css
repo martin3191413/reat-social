@@ -16,7 +16,7 @@
 
 .messageBox{
     padding: 15px;
-    background-color: #4267B2;
+    background-color: hsla(214,89%,52%,1);;
     color: white;
     font-weight: 500;
     border-radius: 20px;
@@ -35,6 +35,6 @@
 }
 
 .messageBox.own{
-    background-color: rgb(250,250,250);
+    background-color: #f0f2f5;
     color:black;
 }

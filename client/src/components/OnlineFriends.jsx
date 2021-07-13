@@ -52,9 +52,11 @@ const OnlineFriends = ({onlineFriendsData, currentUser,userChats,setUserChats}) 
 
     const onlineFriends = friends.map((f) => (
               <li onClick={() => setActiveElement(f)} className="friend">
-               <img src={f.profilePicture ? `http://localhost:5000/images/${f.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`}  alt="profile img" className="friendImg"/>
+                  <div className="friendImageWrapper">
+                  <img src={f.profilePicture ? `http://localhost:5000/images/${f.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`}  alt="profile img" className="friendImg"/>
+                  <span className="activeDot"></span>
+                  </div>
              <span className="friendNameSpan">{f.username}</span>
-             <span className="activeDot"></span>
              </li>
     ));
 

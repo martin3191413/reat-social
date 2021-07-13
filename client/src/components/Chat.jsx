@@ -101,12 +101,14 @@ const Chat = ({activeChat, currentUser, socket,arrivalMessage}) => {
                     <InfoIcon className="chatBoxIcon" />
                 </div>
             </div>
+            <div className="chatMessages">
             <div className="chatBoxTop">
                 {chatMessages.map((m) => (
                     <div ref={scrollRef}>
                         <Message key={m._id} message={m} own={m.creatorId === currentUser._id} currentUser={currentUser}/>
                     </div>
                 ))}
+            </div>
             </div>
             <div className="chatBoxBottom">
             <textarea onChange={(e) => setMessageInput(e.target.value)} placeholder="write something..." className="textArea"></textarea>

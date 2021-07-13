@@ -21,7 +21,6 @@
 .friend{
     display: flex;
     flex-direction: row;
-    position: relative;
     cursor: pointer;
 }
 
@@ -32,6 +31,10 @@
     margin-right: 10px;
 }
 
+.friendImageWrapper{
+    position: relative;
+}
+
 .activeDot{
     position: absolute;
     height: 12px;
@@ -39,8 +42,8 @@
     background-color: limegreen;
     border-radius: 50%;
     border: 2px solid white;
-    top: 32px;
-    right: 67px;
+    right: 8px;
+    top: -2px;
 }
 
 .noOnline{
