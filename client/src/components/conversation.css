@@ -4,5 +4,6 @@
 
 .conversation{
     width: 71%;
-    border-radius: 8px;
+    border-radius: 12px;
+    margin-left: 10px;
 }

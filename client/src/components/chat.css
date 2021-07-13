@@ -6,6 +6,37 @@
   height: 90vh;
 }
 
+.chatBoxChatInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 96.5%;
+    border-bottom: 1px solid lightgray;
+    padding: 15px;
+}
+
+.chatBoxChatInfoLeft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatBoxIcon{
+    padding: 10px;
+    transform: scale(1.4);
+    margin-right: 5px;
+    cursor: pointer;
+    color: hsla(214,89%,52%,1);
+}
+
+.chatBoxUserImg{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 .chatBoxTop{
     overflow-y: scroll;
     padding-right: 10px;
@@ -33,12 +64,12 @@
 }
 
 .none{
-    background-color: lightskyblue;
+    background-color: rgb(135, 186, 252);
     cursor: not-allowed;
 }
 
 .active{
-    background-color: rgb(70, 183, 253);
+    background-color: hsla(214,89%,52%,1);
     cursor: pointer;
 }
 

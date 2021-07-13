@@ -97,7 +97,7 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
             };
 
             const res = await axios.post(`http://localhost:5000/api/conversations/newConversation`, payload);
-            setUserChats([...userChats, res.data]);
+            setUserChats((prev) => [...prev, res.data]);
             setDisplay(false);
             setSearch('');
             setActiveChat(res.data);
@@ -131,7 +131,7 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
             ))}
             </div>
             </div>
-            <div className="chat">
+            <div className={activeChat ? 'chat act' : 'chat'}>
                    <Chat activeChat={activeChat} currentUser={user} socket={socket} arrivalMessage={arrivalMessage}/>
             </div>
             <div className="onlineFriends">

@@ -218,7 +218,9 @@ export default function Header({socket,arrivalMessage}) {
                     <AppsOutlinedIcon className="profileLink" />
                     </div>
                     <div className="profileLinkWrapper">
-                    <MessageOutlinedIcon className="profileLink"  />
+                    <Link to={`/messenger`}>
+                    <img src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2017/png/iconmonstr-facebook-messenger-1.png&r=0&g=0&b=0" alt="" className="messangerLink" />
+                    </Link>
                     </div>
                     <div className="profileLinkWrapper">
                     <NotificationsNoneOutlinedIcon onClick={displayNotificationsFunction} className="profileLink" />

@@ -2,14 +2,33 @@ import './chat.css';
 import Message from './Message';
 import axios from 'axios';
 import {useEffect, useState, useRef} from 'react';
+import CallIcon from '@material-ui/icons/Call';
+import VideocamIcon from '@material-ui/icons/Videocam';
+import InfoIcon from '@material-ui/icons/Info';
 
 const Chat = ({activeChat, currentUser, socket,arrivalMessage}) => {
 
     const [chat, setChat] = useState(activeChat);
     const [chatMessages, setChatMessages] = useState([]);
     const [messageInput, setMessageInput] = useState('');
+    const [otherUserData, setOtherUserData] = useState([]);
     const scrollRef = useRef();
 
+    useEffect(() => {
+
+        const fetchOtherUserData = async() => {
+
+            let otherUserId = chat?.members.find((id) => id !== currentUser._id);
+
+          const res =  await axios.get(`http://localhost:5000/api/users/${otherUserId}`);
+
+          setOtherUserData(res.data);
+
+        };
+
+        fetchOtherUserData();
+
+    }, [activeChat,currentUser._id,chat?.members]);
     
     useEffect(() => {
         arrivalMessage && activeChat?.members?.includes(arrivalMessage.senderId) &&
@@ -71,6 +90,17 @@ const Chat = ({activeChat, currentUser, socket,arrivalMessage}) => {
     if (activeChat){
         return (
             <div className="chatBoxWrapper">
+            <div className="chatBoxChatInfo">
+                <div className="chatBoxChatInfoLeft">
+                <img src={otherUserData.profilePicture ? `http://localhost:5000/images/${otherUserData.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} className="chatBoxUserImg" alt="" />
+                <span className="chatBoxUserUsername">{otherUserData.username}</span>
+                </div>
+                <div className="chatBoxChatInfoRight">
+                    <CallIcon className="chatBoxIcon" />
+                    <VideocamIcon className="chatBoxIcon"  />
+                    <InfoIcon className="chatBoxIcon" />
+                </div>
+            </div>
             <div className="chatBoxTop">
                 {chatMessages.map((m) => (
                     <div ref={scrollRef}>

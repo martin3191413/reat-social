@@ -92,7 +92,7 @@
    margin-left: 10px;
   margin-top: 3px;
   cursor: pointer;
-  color: rgb(207, 207, 207);
+  color: rgb(190, 190, 190);
   margin-bottom: 2px;
 }
 
@@ -281,6 +281,7 @@ a{
 
 .profileMenuProfileLink:hover{
     background-color: rgb(231, 231, 231);
+    border-radius: 8px;
 }
 
 .profileMenuText{
@@ -393,15 +394,17 @@ a{
 
 
 .headerIconSvg{
-    color: black;
+    color:rgb(92, 92, 92);
     transform: scale(1.5);
+    margin-bottom: 2px;
 }
 
 .headerMiddle{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 35%;
+   width: fit-content;
+   margin-left: 40px;
 }
 
 .headerIcons{
@@ -411,7 +414,7 @@ a{
 }
 
 .headerIcon{
-    padding: 18px;
+    padding: 16px;
     padding-right: 20px;
     padding-left: 20px;
     margin-right: 40px;
@@ -433,11 +436,14 @@ a{
 }
 
 .headerRight{
-    width: 20%;
+    width: fit-content;
+    margin-right: 40px;
 }
 
 .profileLinks{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profileMenuProfileText{
@@ -451,4 +457,25 @@ a{
     margin-right: 5px;
     margin-left: 5px;
     cursor: pointer;
+    color:rgb(92, 92, 92);
+}
+
+.profileLink:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+.messangerLink{
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+    padding: 7px;
+    background-color: #f0f2f5;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.messangerLink:hover{
+    background-color: rgb(231, 231, 231);
 }

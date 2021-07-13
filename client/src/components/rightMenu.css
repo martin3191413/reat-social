@@ -1,5 +1,5 @@
 .rightMenu{
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -9,8 +9,8 @@
 }
 
 .presentImg{
-    height: 45px;
-    width: 45px;
+    height: 35px;
+    width: 35px;
     margin-right: 10px;
 }
 
@@ -20,8 +20,11 @@
 
 .rightBarBirthdayWrapper{
     display: flex;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: #fff;
     flex-direction: column;
     border-radius: 12px;
+    height: 70px;
 }
 
 .rightBarBirthdayTop{
@@ -31,7 +34,8 @@
 }
 
 .birthdayBottomText{
-    margin-left: 53px;
+    margin-left: 43px;
+    width: fit-content;
 }
 
 .rightBarAd{
@@ -60,8 +64,14 @@
     justify-items: center;
     align-items: center;
     margin-bottom: 15px;
-    margin-top: 15px;
-    margin-left: 20px;
+    padding: 10px;
+    margin-left: 15px;
+    width: 50%;
+    border-radius: 12px;
+}
+
+.rightbarFriend:hover{
+    background-color: rgb(250,250,250);
 }
 
 .rightbarProfileImageContainer{
@@ -92,5 +102,9 @@
 }
 
 .noFriendsOnlineSpan{
-    margin-left: 30px;
+    margin-left: 25px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: #fff;
 }
