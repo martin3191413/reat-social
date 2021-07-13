@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import './rightMenu.css';
 import axios from 'axios';
+import ClearIcon from '@material-ui/icons/Clear';
 import {Link} from 'react-router-dom';
 
 const RightMenu = ({onlineFriendsData, currentUser}) => {
@@ -38,13 +39,22 @@ const RightMenu = ({onlineFriendsData, currentUser}) => {
         </Link>
     ));
 
+    const removeBirthdayLabel = (e) => {
+        document.getElementsByClassName('rightBarBirthdayWrapper')[0].remove();
+    };
+
         return (
             <div className="rightMenu">
             <div className="rightMenuWrapper">
                 <div className="rightBarBirthdayWrapper">
-                    <div className="rightBarBirthdayTop">
+                    <div className="rightBarTopWrapper">
+                    <div className="rightBarBirthdayTopLeft">
                         <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yA/r/hq-o6A7TPpe.png" alt="presentPic" className="presentImg" />
                         <span className="birthdayText">Birthdays</span>
+                    </div>
+                    <div className="rightBarTopRight">
+                        <ClearIcon className="clearIcon" onClick={(e) => removeBirthdayLabel(e)} />
+                    </div>
                     </div>
                     <div className="rightBarBirthdayBottom">
                         <span className="birthdayBottomText"><b>John Doe</b> and <b>4 others</b> have birthdays today!</span>

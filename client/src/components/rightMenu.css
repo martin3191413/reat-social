@@ -28,7 +28,19 @@
     padding: 10px;
 }
 
-.rightBarBirthdayTop{
+.rightBarTopWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clearIcon{
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(0.9);
+}
+
+.rightBarBirthdayTopLeft{
     display: flex;
     justify-content: flex-start;
     align-items: center;
