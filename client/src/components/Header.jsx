@@ -28,8 +28,6 @@ export default function Header({socket,arrivalMessage}) {
 
     const {user,dispatch} = useContext(AuthContext);
 
-    const history = useHistory();
-
     const [search, setSearch] = useState('');
     const [users, setUsers] = useState([]);
     const [display, setDisplay] = useState(false);
@@ -57,7 +55,7 @@ export default function Header({socket,arrivalMessage}) {
                     let matches = users.filter((u) => u.username[0] === search);
 
                     if (matches.length === 0){
-                        matches.push({username: 'No matches found!'});
+                        matches.push({username: 'No matches found!', image: false});
                         setResults(matches);
                         setDisplay(true);
                     }
@@ -72,7 +70,7 @@ export default function Header({socket,arrivalMessage}) {
                     let secondMatches = users.filter((u) => u.username.includes(search));
 
                     if (secondMatches.length === 0){
-                        secondMatches.push({username: 'No matches found!'});
+                        secondMatches.push({username: 'No matches found!', image: false});
                         setResults(secondMatches);
                         setDisplay(true);
                     }
@@ -162,7 +160,12 @@ export default function Header({socket,arrivalMessage}) {
 
         authTokenAuthorization(token, 'privateWord', dispatch);
 
-        history.push('/login');
+        window.location.reload();
+    };
+
+    const inputOnChangeHandler = (e) => {
+        setSearch(e.target.value);
+        setDisplay(!display);
     };
 
     return (
@@ -173,18 +176,21 @@ export default function Header({socket,arrivalMessage}) {
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/2048px-Facebook_f_logo_%282019%29.svg.png" alt="logo" className="facebookLogo" />
             </div>
             </Link>
-            <div className="searchBarWrapper">
-            <div className="searchBar">
+            <div className={`searchBarWrapper ${display}`}>
+            <div className='searchBar'>
                 <Search className="searchIcon"/>
-                <input on value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search in Facebook" className="searchInput"></input>
+                <input on value={search} onChange={(e) => inputOnChangeHandler(e)} placeholder="Search in Facebook" className="searchInput"></input>
             </div>
-            <ul className="searchUl" style={{display: display ? 'block' : 'none'}}>
+            <div className="results" style={{display: display ? 'block': 'none'}}>
                 {results.map((r) => (
                     <Link to={`/profile/${r.username}`}>
-                    <li className="friendLi">{r.username}</li>
-                    </Link>
+                    <div className="result">
+                    <img className="resultImg" style={{display: r.image === false ? 'none' : 'block'}} src={r.profilePicture ? `http://localhost:5000/images/${r.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="profile img" />
+                    <span className="result" style={{marginLeft: r.image === false ? '6px' : '0px'}}>{r.username}</span>
+                </div>
+                </Link>
                 ))}
-            </ul>
+            </div>
             </div>
             </div>
             <div className="headerMiddle">
@@ -291,7 +297,7 @@ export default function Header({socket,arrivalMessage}) {
                     <span className="profileMenuSettingsText">Display & Accessibbility</span>
                      <ArrowForwardIosIcon className="arrowIcon" />
                     </div>
-                    <div className="profileMenuSettingsItem">
+                    <div className="profileMenuSettingsItem" onClick={logoutHandler}>
                     <MeetingRoomIcon  className="settingsIcon"/>
                     <span className="profileMenuSettingsText">Logout</span>
                      <ArrowForwardIosIcon className="arrowIcon" />

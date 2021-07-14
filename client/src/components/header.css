@@ -15,7 +15,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: fit-content;
+    width: 300px;
 }
 
 .siteLogo{
@@ -43,40 +43,26 @@
     margin-right: 50px;
 }
 
-.searchUl{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    height: fit-content;
-    width: 92%;
-    margin-left: 33px;
-    background-color: white;
-    border-left: 1px solid lightgray;
-    border-right: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+.searchResults{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.friendLi{
-    font-size: 18px;
-    padding: 5px;
-    padding-left: 10px;
-    cursor: pointer;
-}
-
-.friendLi:hover{
-    background-color: rgb(250, 250, 250);
+.searchResult{
+    padding: 10px;
 }
 
 .searchBar{
     border-radius: 30px;
     height: 35px;
-    width: 100%;
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f0f2f5;
 }
-
 
 .searchInput{
     width: 100%;
@@ -125,19 +111,6 @@
     cursor: pointer;
 }
 
-.headerIcons{
-    position: relative;
-    right: 80px;
-}
-
-.headerIcon{
-    padding: 8px;
-    cursor: pointer;
-    color: white;
-    height: 25px;
-    width: 25px;
-    position: relative;
-}
 
 .badge{
     background-color: hsla(0,90%,50%,1);
@@ -249,6 +222,41 @@ a{
     border-radius: 4px;
     background-color: #f7f7f7;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.true{
+    position: absolute;
+    top: 5px;
+    left: 95px;
+    height: fit-content;
+    width: 200px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(218, 233, 252);
+}
+
+.results{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    background-color: #f0f2f5;
+}
+
+.result{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(218, 233, 252);
+  color: rgb(53, 53, 53);
+}
+
+.resultImg{
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .profileMenuWrapper{
@@ -405,7 +413,6 @@ a{
     justify-content: flex-start;
     align-items: center;
    width: fit-content;
-   margin-left: 40px;
 }
 
 .headerIcons{
@@ -422,7 +429,12 @@ a{
     margin-left: 40px;
     border-radius: 12px;
     margin-right: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
+
 
 .headerIcon:hover{
     background-color: #f0f2f5;
