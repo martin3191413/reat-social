@@ -15,7 +15,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 300px;
+   max-width: 300px;
 }
 
 .siteLogo{
@@ -118,8 +118,8 @@
     position: absolute;
     top: -2px;
     right: 0;
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     font-size: 12px;
     display: flex;
     justify-content: center;
@@ -149,23 +149,29 @@ a{
     border-radius: 4px;
     width: 340px;
     height: fit-content;
-    height: 400px;
-    max-height: 400px;
+   min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: #f7f7f7;
     cursor: auto;
-    border: 1px solid lightgray;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
 
+.notificationsHeader{
+    padding: 10px;
+    margin-left: 10px;
+    color: hsla(214,89%,52%,1);
+}
+
+.notificationsHr{
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .notification{
     color: black;
     padding: 15px;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -218,7 +224,6 @@ a{
     flex-direction: column;
     justify-content: space-between;
     align-items:stretch;
-    border: 1px solid lightgray;
     border-radius: 4px;
     background-color: #f7f7f7;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
@@ -233,6 +238,11 @@ a{
     border-radius: 20px;
     padding: 10px;
     background-color: rgb(218, 233, 252);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.left{
+    margin-left: 205px;
 }
 
 .results{
@@ -257,6 +267,7 @@ a{
     width: 32px;
     object-fit: cover;
     border-radius: 50%;
+    margin-right: 10px;
 }
 
 .profileMenuWrapper{
@@ -478,10 +489,10 @@ a{
 }
 
 .messangerLink{
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     object-fit: cover;
-    padding: 7px;
+    padding: 9px;
     background-color: #f0f2f5;
     border-radius: 50%;
     margin-left: 5px;

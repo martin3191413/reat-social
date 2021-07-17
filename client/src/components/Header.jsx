@@ -1,6 +1,5 @@
 import './header.css';
 import {Search} from '@material-ui/icons';
-import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import {Link,NavLink} from 'react-router-dom';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
@@ -21,7 +20,6 @@ import HelpIcon from '@material-ui/icons/Help';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import Switch from 'react-switch';
-import { useHistory} from 'react-router';
 import { authTokenAuthorization } from '../apiCalls';
 
 export default function Header({socket,arrivalMessage}) {
@@ -139,19 +137,6 @@ export default function Header({socket,arrivalMessage}) {
         }
     };
 
-    // const displayNotifications = () => {
-
-    //     const data = [];
-
-    //     notificationsData.map((n) => (
-    //         <div className="notification">
-    //     <img  src={n.profilePicture ? `http://localhost:5000/images/${n.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="" className="personImg" />
-    //         <span>{n.username} has liked your photo.</span>
-    //         <img src={`http://localhost:5000/images/${n.img}`} alt="" className="notificationImg" />
-    //     </div>
-    //     ));
-    // };
-
     const logoutHandler = () => {
 
         const token = localStorage.getItem('userSession');
@@ -186,14 +171,14 @@ export default function Header({socket,arrivalMessage}) {
                     <Link to={`/profile/${r.username}`}>
                     <div className="result">
                     <img className="resultImg" style={{display: r.image === false ? 'none' : 'block'}} src={r.profilePicture ? `http://localhost:5000/images/${r.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="profile img" />
-                    <span className="result" style={{marginLeft: r.image === false ? '6px' : '0px'}}>{r.username}</span>
+                    <span className="resultSpan" style={{marginLeft: r.image === false ? '6px' : '0px'}}>{r.username}</span>
                 </div>
                 </Link>
                 ))}
             </div>
             </div>
             </div>
-            <div className="headerMiddle">
+            <div className={`headerMiddle ${display ? 'left' : ''}`}>
                 <div className="headerIcons">
                     <NavLink exact to='/' activeClassName="activeHomeLink">
                     <div className="headerIcon">
@@ -217,14 +202,16 @@ export default function Header({socket,arrivalMessage}) {
             <div className="headerRight">
             <div className="profileWrapper">
             <div className="profilePicture">
-                <img className="img" onClick={() => setDisplayProfileMenu(!displayProfileMenu)}  src={user.profilePicture ? `http://localhost:5000/images/${user.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="profile-pic"></img>
+                <Link to={`/profile/${user.username}`}>
+                <img className="img"  src={user.profilePicture ? `http://localhost:5000/images/${user.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="profile-pic"></img>
+                </Link>
                 <span className="profileMenuProfileText">{user.username}</span>
                 <div className="profileLinks">
                     <div className="profileLinkWrapper">
                     <AppsOutlinedIcon className="profileLink" />
                     </div>
                     <div className="profileLinkWrapper">
-                    <Link to={`/messenger`}>
+                    <Link to={'/messenger'}>
                     <img src="https://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2017/png/iconmonstr-facebook-messenger-1.png&r=0&g=0&b=0" alt="" className="messangerLink" />
                     </Link>
                     </div>
@@ -232,17 +219,32 @@ export default function Header({socket,arrivalMessage}) {
                     <NotificationsNoneOutlinedIcon onClick={displayNotificationsFunction} className="profileLink" />
                     <span className="badge" style={{display: haveSeenNotifications === false && notificationsData.length > 0 ? 'block' : 'none'}}>{notificationsData.length}</span>
                     <div className="notifications" style={{display: displayNotifications ? 'block': 'none'}}>
-                        {notificationsData.map((n) => (
-                            <div className="notification">
-                        <img  src={n.profilePicture ? `http://localhost:5000/images/${n.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="" className="personImg" />
-                            <span>{n.username} has liked your photo.</span>
-                            <img src={`http://localhost:5000/images/${n.img}`} alt="" className="notificationImg" />
-                        </div>
-                        ))}
+                        <h5 className="notificationsHeader">All Notifications ({notificationsData.length})</h5>
+                        <hr className="notificationsHr"></hr>
+                        {notificationsData.map((n) => {
+                            if (n.hasOwnProperty('comments')){
+
+                               const postNotification = <div className="notification">
+                                <img  src={n.profilePicture ? `http://localhost:5000/images/${n.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="" className="personImg" />
+                                <span>{n.username} has liked your photo.</span>
+                                <img src={`http://localhost:5000/images/${n.img}`} alt="" className="notificationImg" />
+                                </div>;
+
+                                return postNotification;
+                            }
+                            else{
+                                const followNotification = <div className="notification">
+                                <img  src={n.profilePicture ? `http://localhost:5000/images/${n.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="" className="personImg" />
+                                    <span>{n.username} has started following you.</span>
+                                 </div>;
+
+                                 return followNotification;
+                            }
+                        })}
                     </div>
                     </div>
                     <div className="profileLinkWrapper">
-                    <KeyboardArrowDownIcon className="profileLink" />
+                    <KeyboardArrowDownIcon onClick={() => setDisplayProfileMenu(!displayProfileMenu)} className="profileLink" />
                     </div>
             </div>
             </div>

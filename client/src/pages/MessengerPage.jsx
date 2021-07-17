@@ -14,10 +14,11 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
     const [activeChat, setActiveChat] = useState(null);
     const [userChats, setUserChats] = useState([]);
     const [users, setUsers] = useState([]);
-    const [display, setDisplay] = useState([]);
+    const [display, setDisplay] = useState(false);
     const [search, setSearch] = useState('');
     const [results,setResults] = useState([]);
     const [activeElement, setActiveElement] = useState('');
+    const [className,setClassName] = useState('');
 
     useEffect(() => {
 
@@ -49,7 +50,7 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
                     let matches = users.filter((u) => u.username[0] === search);
 
                     if (matches.length === 0){
-                        matches.push({username: 'No matches found!'});
+                        matches.push({username: 'No matches found!', image: false});
                         setResults(matches);
                         setDisplay(true);
                     }
@@ -64,7 +65,7 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
                     let secondMatches = users.filter((u) => u.username.includes(search));
 
                     if (secondMatches.length === 0){
-                        secondMatches.push({username: 'No matches found!'});
+                        secondMatches.push({username: 'No matches found!',image: false});
                         setResults(secondMatches);
                         setDisplay(true);
                     }
@@ -83,6 +84,7 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
 
         if (!search){
             setDisplay(false);
+            setClassName('');
         }
 
     }, [search, users,user]);
@@ -122,6 +124,11 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
 
     }, [activeElement,user, userChats]);
 
+    const inputOnChangeHandler = (e) => {
+        setSearch(e.target.value);
+        setDisplay(!display);
+        setClassName('displaySearch');
+    };
 
     return (
         <>
@@ -129,13 +136,16 @@ const MessengerPage = ({socket,onlineFriendsData,arrivalMessage}) => {
         <div className="messenger">
         <div className="conversations">
             <div className="converstationsWrapper">
-            <div className="searchWrapper">
-            <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" className="searchFriend" placeholder="Search for a friend..."/>
-            <ul className="searchOptions" style={{display: display ? 'block' : 'none'}}>
+            <div className={`searchWrapper ${className}`}>
+            <input value={search} onChange={(e) => inputOnChangeHandler(e)} type="text" className="searchFriend" placeholder="Search for a friend..."/>
+            <div className="searchResults" style={{display: display ? 'block': 'none'}}>
                 {results.map((r) => (
-                    <li onClick={() => setActiveElement(r)} className="searchOption" key={r._id}>{r.username}</li>
+                    <div className="searchResult" onClick={() => setActiveElement(r)}>
+                    <img className="searchResultImg" style={{display: r.image === false ? 'none' : 'block'}} src={r.profilePicture ? `http://localhost:5000/images/${r.profilePicture}` : `http://localhost:5000/images/noProfilePic.png`} alt="profile img" />
+                    <span className="searchResultSpan" style={{marginLeft: r.image === false ? '6px' : '0px'}}>{r.username}</span>
+                </div>
                 ))}
-            </ul>
+            </div>
             </div>
             {userChats.map(chat => (
                    <Conversation chat={chat} key={chat._id} currentUser={user} setActiveChat={setActiveChat} />

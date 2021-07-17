@@ -44,7 +44,7 @@
 }
 
 .conversation{
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px;
     display: flex;
     justify-content: flex-start;
@@ -53,7 +53,7 @@
 }
 
 .searchFriend{
-    margin-top: 10px;
+    margin-top: 30px;
     border: none;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     background-color: #fff;
@@ -61,7 +61,7 @@
     padding: 20px;
     font-size: 18px;
     border-radius: 12px;
-    margin-left: 10px;
+    margin-left: 40px;
 }
 
 .searchFriend:focus{
@@ -88,6 +88,7 @@
     width: 20.85%;
 }
 
+
 .searchOption{
     padding: 5px;
     padding-left: 15px;
@@ -100,4 +101,34 @@
 
 .act{
     background-color: #fff;
+}
+
+.searchResults{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin-left: 17px;
+    position: absolute;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: rgb(218, 233, 252);
+    border-radius: 4px;
+}
+
+.searchResult{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(53, 53, 53);
+  width:200px;
+  border-radius: 4px;
+}
+
+.searchResultImg{
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
 }

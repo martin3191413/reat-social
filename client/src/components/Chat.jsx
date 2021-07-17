@@ -87,6 +87,7 @@ const Chat = ({activeChat, currentUser, socket,arrivalMessage}) => {
        });
     };
 
+
     if (activeChat){
         return (
             <div className="chatBoxWrapper">
